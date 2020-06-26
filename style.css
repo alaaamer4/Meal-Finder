@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(
+    rgba(168, 9, 9, 0.904),
+    rgba(89, 95, 1, 0.904),
+    rgba(255, 123, 0, 0.747)
+  );
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+h1 {
+  color: #fff;
+  font-size: 2.6rem;
+  padding: 1.2rem;
+}
+h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+}
+.container {
+  width: 65vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #007dd7;
+  color: #fff;
+  border: none;
+  outline: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 2rem;
+  margin: 0.3rem;
+}
+.btn:hover {
+  background-color: #0563a5;
+}
+.btn:active {
+  background-color: #044b7e;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem;
+}
+form {
+  display: flex;
+}
+.input-group {
+  position: relative;
+  width: 25rem;
+  height: 3.5rem;
+  display: flex;
+}
+.input-group input {
+  border-radius: 2rem;
+  padding: 1.5rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.input-group .btn {
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: #8abf2e;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+}
+.input-group .btn:hover {
+  background-color: #74b800;
+}
+.input-group .btn:active {
+  background-color: #4c7701;
+}
+
+.meals {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 0.7rem;
+  margin-top: 1rem;
+}
+.meal {
+  cursor: pointer;
+  position: relative;
+  width: 14rem;
+  height: 14rem;
+  text-align: center;
+}
+.meal-info {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.meal:hover .meal-info {
+  opacity: 1;
+}
+.meal img {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #fff;
+  border-radius: 2px;
+}
