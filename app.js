@@ -12,13 +12,50 @@ const getMealsById = async (id) => {
   );
   const data = await res.json();
   const meal = data.meals[0];
+  console.log(meal);
   showMeal(meal);
 };
+// get random meals
+const getRandom = async () => {
+  const res = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
+  const data = await res.json();
+  const meal = data.meals[0];
+  console.log(meal);
+  showMeal(meal);
+};
+
 // show meal in the DOM
 const showMeal = (meal) => {
-  singleMeal.innerHTML = `
+  const ingredients = [];
 
-    `;
+  for (let i = 1; i <= 20; i++) {
+    if (meal[`strIngredient${i}`]) {
+      ingredients.push(
+        `${meal[`strIngredient${i}`]}-${meal[`strMeasure${i}`]}`
+      );
+    } else {
+      break;
+    }
+  }
+  resultHeading.innerHTML = "";
+  meals.innerHTML = "";
+  singleMeal.innerHTML = `
+  <div class = "single-meal" >
+  <h1>${meal.strMeal}</h1>
+  <img src="${meal.strMealThumb}" alt = "${meal.strMeal}"/>
+  <div class = "single-meal-info">
+  ${meal.strCategory ? `<p> Category :  ${meal.strCategory}</p>` : ""}
+  ${meal.strArea ? `<p> Area : ${meal.strArea}</p>` : ""}
+  </div>
+  <div class="main">
+  <p>${meal.strInstructions}</p>
+  <h2>Ingredients : </h2>
+  <ul>
+  ${ingredients.map((ing) => `<li>${ing}</li>`).join("")}
+  </ul>
+  </div>
+  </div>
+  `;
 };
 // search meals
 const getMeals = async (term) => {
@@ -69,3 +106,5 @@ meals.addEventListener("click", (e) => {
     getMealsById(mealId);
   }
 });
+
+random.addEventListener("click", getRandom);

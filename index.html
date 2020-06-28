@@ -15,23 +15,25 @@
   <body>
     <div class="container">
       <h1>Meal Finder</h1>
-      <form class="form">
-        <div class="input-group">
-          <input
-            type="text"
-            placeholder="Enter Meal Name"
-            autocomplete="off"
-            id="search"
-          />
-
-          <button class="btn" id="btn-search">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
+      <div class="form">
+        <form>
+          <div class="input-group">
+            <input
+              type="text"
+              placeholder="Enter Meal Name"
+              autocomplete="off"
+              id="search"
+              required
+            />
+            <button class="btn" id="btn-search">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
         <button class="btn" id="btn-random">
           <i class="fas fa-random"></i>
         </button>
-      </form>
+      </div>
       <div id="result-heading"><h3>result will be here</h3></div>
       <div id="meals" class="meals"></div>
       <div id="single-meal"></div>

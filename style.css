@@ -4,11 +4,17 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(
+  color: #fff;
+  text-align: center;
+  /* background: linear-gradient(
     rgba(168, 9, 9, 0.904),
     rgba(89, 95, 1, 0.904),
     rgba(255, 123, 0, 0.747)
-  );
+  ); */
+  background: linear-gradient(rgba(214, 92, 10, 0.459), rgba(214, 92, 10, 0.8)),
+    url("./banner.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  max-width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -58,7 +64,7 @@ h3 {
   text-align: center;
   margin: 1rem;
 }
-form {
+.form {
   display: flex;
 }
 .input-group {
@@ -127,4 +133,66 @@ form {
   height: 100%;
   border: 5px solid #fff;
   border-radius: 2px;
+}
+
+ul li {
+  background-color: #fff;
+  list-style: none;
+  padding: 0.4rem;
+  margin: 1rem 0.2rem;
+  display: inline-block;
+  color: #2d2013;
+  border: 1px solid #ededed;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.single-meal img {
+  border: #fff solid 5px;
+  border-radius: 3px;
+}
+.single-meal-info {
+  padding: 1rem;
+  margin: 1rem;
+  border: 3px #ec1313 dashed;
+}
+.single-meal-info p {
+  font-weight: bold;
+  padding: 0.3rem;
+}
+.main p {
+  line-height: 1.8rem;
+}
+
+.single-meal img {
+  /* width: 500px; */
+  height: 500px;
+}
+
+@media (max-width: 800px) {
+  .meals {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .meals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.3rem;
+  }
+}
+@media (max-width: 500px) {
+  .meals {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .input-group {
+    width: 300px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
